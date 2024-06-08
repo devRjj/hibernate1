@@ -19,7 +19,12 @@ public class Laptop {
 	@Column(name="company")
 	private String company;
 	
-	@OneToOne
+	@Override
+	public String toString() {
+		return "Laptop [imei=" + imei + ", company=" + company + ", student=" + student + "]";
+	}
+
+	@OneToOne(mappedBy = "laptop")
 	private Student student;
 	
 	public Student getStudent() {
